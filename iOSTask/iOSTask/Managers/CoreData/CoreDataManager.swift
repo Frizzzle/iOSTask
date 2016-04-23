@@ -6,7 +6,7 @@
 //  Copyright © 2016 Koctya Bondar. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class CoreDataManager: NSObject {
 
