@@ -31,7 +31,6 @@ extension FavoriteVC : UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let newsCell = tableView.dequeueReusableCellWithIdentifier(TVC_NEWS) as! NewsTVC;
         newsCell.newsTitle.text = "Test Title for news"
-        newsCell.newsDate.text = "15.19.2087"
         newsCell.newsFavLabel.text = "Remove from favorite"
         
         return newsCell;

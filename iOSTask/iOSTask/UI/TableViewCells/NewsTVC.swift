@@ -14,5 +14,6 @@ class NewsTVC: UITableViewCell {
     @IBOutlet weak var newsFavoriteImage: UIImageView!
     @IBOutlet weak var newsDate: UILabel!
     @IBOutlet weak var newsTitle: UILabel!
-    @IBOutlet weak var newsImage: UIView!
+
+    @IBOutlet weak var newsImage: UIImageView!
 }

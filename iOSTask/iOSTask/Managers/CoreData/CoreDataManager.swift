@@ -8,6 +8,12 @@
 
 import UIKit
 
-class CoreDataManager: NSObject {
-
+class CoreDataManager {
+    var loadState:Int!
+    static let sharedInstance = CoreDataManager()
+    var newsCollection:[NewsModel!]
+    init() {
+        loadState = ST_NOT_LOADED
+        self.newsCollection = [NewsModel]()
+    }
 }
