@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E5FC4ED1CCCF6F600BC6732 /* NewsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5FC4EC1CCCF6F500BC6732 /* NewsDetailVC.swift */; };
 		1EE242961CCBD6E50079E209 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EE242941CCBD6E50079E209 /* Main.storyboard */; };
 		1EE242991CCBD6E50079E209 /* iOSTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1EE242971CCBD6E50079E209 /* iOSTask.xcdatamodeld */; };
 		1EE2429B1CCBD6E50079E209 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EE2429A1CCBD6E50079E209 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		0FB71C3B853AE4433B30971C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E5FC4EC1CCCF6F500BC6732 /* NewsDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailVC.swift; sourceTree = "<group>"; };
 		1EE2428D1CCBD6E50079E209 /* iOSTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE242951CCBD6E50079E209 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1EE242981CCBD6E50079E209 /* iOSTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOSTask.xcdatamodel; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				1EE242DB1CCBE4290079E209 /* NewsVC.swift */,
+				1E5FC4EC1CCCF6F500BC6732 /* NewsDetailVC.swift */,
 				1EE242DD1CCBE4D20079E209 /* FavoriteVC.swift */,
 				1EE242DF1CCBE4E30079E209 /* AboutVC.swift */,
 			);
@@ -430,6 +433,7 @@
 				1EE242E61CCBE5600079E209 /* NetworkManager.swift in Sources */,
 				1EE242EA1CCBE58E0079E209 /* Constants.swift in Sources */,
 				1EE242991CCBD6E50079E209 /* iOSTask.xcdatamodeld in Sources */,
+				1E5FC4ED1CCCF6F600BC6732 /* NewsDetailVC.swift in Sources */,
 				1EE242E81CCBE5700079E209 /* CoreDataManager.swift in Sources */,
 				1EE242E21CCBE52D0079E209 /* NewsTVC.swift in Sources */,
 				1EE242DC1CCBE4290079E209 /* NewsVC.swift in Sources */,

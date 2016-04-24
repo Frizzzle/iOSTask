@@ -8,3 +8,4 @@
 
 let TVC_NEWS = "TVC_News"
 let IMG_BACKGROUND = "background"
+let SEGUE_DETAIL = "showNewsDetail"

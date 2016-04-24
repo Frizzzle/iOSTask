@@ -20,11 +20,27 @@ class NewsVC: UIViewController {
         imageView.center = view.center
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
-        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        let detailVC = segue.destinationViewController as! NewsDetailVC
+        detailVC.name = "Test NAME"
+        detailVC.titleAlbom = "Some test title"
+        detailVC.artist = "Artist - Some artist"
+        detailVC.releaseDate = "Release date - 25.58.4834"
+        detailVC.price = "Price - 25$"
+        detailVC.rights = "Some rights"
     }
 
 }
 extension NewsVC : UITableViewDataSource {
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true);
+        self.performSegueWithIdentifier(SEGUE_DETAIL, sender: self);
+
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 25;
