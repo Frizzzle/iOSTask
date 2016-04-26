@@ -50,7 +50,6 @@ class CoreDataManager {
         }
         managedContext.performBlock {
             let createRequest = NSFetchRequest(entityName: ENT_NEWS)
-            //createRequest.resultType = ManagedObjectIDResultType
             let predicate = NSPredicate(format: "id = %@", element.id)
             createRequest.predicate = predicate
             do {

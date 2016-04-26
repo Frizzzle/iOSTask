@@ -15,6 +15,7 @@ class NetworkManager {
     static let sharedInstance = NetworkManager()
     
     init() {
+    
         Alamofire.request(.GET, SERVER_URL).responseJSON { (response) in
             CoreDataManager.sharedInstance.loadState = ST_NOT_LOADED
             if let JSON = response.result.value {

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
+
 
 class NewsVC: UIViewController {
     var selectedNews:Int!
@@ -46,13 +49,7 @@ class NewsVC: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
         let detailVC = segue.destinationViewController as! NewsDetailVC
         let selected = CoreDataManager.sharedInstance.newsCollection[selectedNews]
-        detailVC.name = selected.name
-        detailVC.titleAlbom = selected.title
-        detailVC.artist = selected.artist
-        detailVC.releaseDate = selected.releaseDate
-        detailVC.price = selected.price
-        detailVC.rights = selected.rights
-
+        detailVC.news = selected
     }
     
     func changStateFavorite(gestureRecognizer: UIGestureRecognizer) {
@@ -70,7 +67,6 @@ class NewsVC: UIViewController {
             cell.newsFavoriteImage.image = UIImage(named: IMG_WHITE_HEART_UN_HOLO)
             CoreDataManager.sharedInstance.addToFavorite(element)
         }
-        print("tap")
     }
 }
 extension NewsVC : UITableViewDataSource {
@@ -79,6 +75,7 @@ extension NewsVC : UITableViewDataSource {
         tableView.deselectRowAtIndexPath(indexPath, animated: true);
         
         selectedNews = indexPath.row
+        self.performSegueWithIdentifier(SEGUE_DETAIL, sender: self)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -101,6 +98,11 @@ extension NewsVC : UITableViewDataSource {
         newsCell.newsFavoriteImage.userInteractionEnabled = true
         newsCell.newsFavoriteImage.tag = indexPath.row
         newsCell.newsFavoriteImage.hidden = false;
+        
+        let url = NSURL(string: CoreDataManager.sharedInstance.newsCollection[indexPath.row].imageURL60)
+        newsCell.newsImage.af_setImageWithURL(url!)
+       
+        
         return newsCell;
     }
 }

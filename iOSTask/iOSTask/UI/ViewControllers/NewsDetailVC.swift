@@ -17,13 +17,7 @@ class NewsDetailVC: UIViewController {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var imageAlbom: UIImageView!
     
-    var name : String!
-    var price : String!
-    var rights: String!
-    var releaseDate: String!
-    var artist: String!
-    var titleAlbom: String!
-    var imageUrl : String!
+    var news:NewsModel!
     
     override func viewDidLoad() {
         let background = UIImage(named: "background")
@@ -37,12 +31,13 @@ class NewsDetailVC: UIViewController {
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
         
-        nameLbl.text = name;
-        priceLbl.text = price;
-        rightsLbl.text = rights;
-        releaseDateLbl.text = releaseDate;
-        artistLbl.text = artist;
-        titleLbl.text = titleAlbom;
+        nameLbl.text = news.name;
+        priceLbl.text = news.price;
+        rightsLbl.text = news.rights;
+        releaseDateLbl.text = news.releaseDate;
+        artistLbl.text = news.artist;
+        titleLbl.text = news.title;
+        imageAlbom.af_setImageWithURL(NSURL(string:news.imageURL170)!)
     }
     
 }
