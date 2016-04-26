@@ -6,7 +6,7 @@
 //  Copyright © 2016 Koctya Bondar. All rights reserved.
 //
 
-class NewsModel {
+class NewsModel:Equatable {
     var id:String!
     var artist:String!
     var title:String!
@@ -30,5 +30,10 @@ class NewsModel {
         self.imageURL60 = imageURL60
         self.imageURL170 = imageURL170
     }
+
     
 }
+func == (lhs: NewsModel, rhs: NewsModel) -> Bool {
+    return lhs.id == rhs.id
+}
+

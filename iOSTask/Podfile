@@ -4,3 +4,4 @@ use_frameworks!
 
 pod 'Alamofire', '~> 3.3'
 pod 'SWXMLHash', '~> 2.3.0'
+pod 'ImageLoader'
