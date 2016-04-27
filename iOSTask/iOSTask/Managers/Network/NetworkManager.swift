@@ -16,7 +16,6 @@ class NetworkManager {
     
     init() {
         Alamofire.request(.GET, SERVER_URL).responseJSON { (response) in
-            CoreDataManager.sharedInstance.loadState = ST_NOT_LOADED
             if let JSON = response.result.value {
                 if let feed = (JSON["feed"] as? NSMutableDictionary) {
                     for entry in feed["entry"] as! NSArray {
@@ -42,7 +41,6 @@ class NetworkManager {
                             link: linkDict != nil ? (((linkDict![0] as! NSMutableDictionary)["attributes"] as! NSMutableDictionary)["href"] as! String):" ")
                         CoreDataManager.sharedInstance.newsCollection.append(news)
                     }
-                    CoreDataManager.sharedInstance.loadState = ST_LOADED
                     NSNotificationCenter.defaultCenter().postNotificationName("NewsLoaded", object: nil);
                 }
                 print();
