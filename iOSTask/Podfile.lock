@@ -2,19 +2,13 @@ PODS:
   - Alamofire (3.3.1)
   - AlamofireImage (2.4.0):
     - Alamofire (~> 3.3)
-  - ImageLoader (0.8.9)
-  - SWXMLHash (2.3.1)
 
 DEPENDENCIES:
   - Alamofire (~> 3.3)
   - AlamofireImage
-  - ImageLoader
-  - SWXMLHash (~> 2.3.0)
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
   AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
-  ImageLoader: 7a26b4e248aa4cae7df322449ddb109bcfba9f09
-  SWXMLHash: 795c66e74f4cc9473ad6465c6653c5a6f59f417e
 
 COCOAPODS: 0.39.0

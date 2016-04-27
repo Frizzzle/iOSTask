@@ -20,5 +20,6 @@ class AboutVC: UIViewController {
         imageView.center = view.center
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
+        
     }
 }

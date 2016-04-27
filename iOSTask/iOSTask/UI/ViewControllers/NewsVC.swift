@@ -14,9 +14,8 @@ import AlamofireImage
 class NewsVC: UIViewController {
     var selectedNews:Int!
     override func viewDidLoad() {
-        
-        let background = UIImage(named: "background")
         NetworkManager.sharedInstance;
+        let background = UIImage(named: "background")
         
         var imageView : UIImageView!
         imageView = UIImageView(frame: view.bounds)
@@ -27,6 +26,7 @@ class NewsVC: UIViewController {
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
         
+        self.title = "News"
     }
     override func viewWillAppear(animated: Bool) {
         NSNotificationCenter.defaultCenter().addObserver(
@@ -99,8 +99,10 @@ extension NewsVC : UITableViewDataSource {
         newsCell.newsFavoriteImage.tag = indexPath.row
         newsCell.newsFavoriteImage.hidden = false;
         
-        let url = NSURL(string: CoreDataManager.sharedInstance.newsCollection[indexPath.row].imageURL60)
+        let url = NSURL(string: CoreDataManager.sharedInstance.newsCollection[indexPath.row].imageURL60!)
         newsCell.newsImage.af_setImageWithURL(url!)
+        newsCell.newsImage.layer.cornerRadius = 5
+        newsCell.newsImage.clipsToBounds = true
        
         
         return newsCell;

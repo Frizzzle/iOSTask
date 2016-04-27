@@ -10,7 +10,6 @@ import UIKit
 import CoreData 
 
 class CoreDataManager {
-    var loadState:Int!
     let appDelegate:AppDelegate!
     let managedContext:NSManagedObjectContext!
     static let sharedInstance = CoreDataManager()
@@ -21,7 +20,6 @@ class CoreDataManager {
         self.favoriteCollection = [NewsModel]()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         managedContext = appDelegate.managedObjectContext
-        loadState = ST_NOT_LOADED
         self.loadFavoriteFromLocal()
     }
     
@@ -84,6 +82,7 @@ class CoreDataManager {
         news.setValue(newElement.imageURL60, forKey: ATT_NEWS_IMAGEURL60)
         news.setValue(newElement.imageURL170, forKey: ATT_NEWS_IMAGEURL170)
         news.setValue(newElement.price, forKey: ATT_NEWS_PRICE)
+        news.setValue(newElement.link, forKey: ATT_NEWS_LINK)
         do {
             try managedContext.save()
             favoriteCollection.append(newElement)
@@ -94,7 +93,6 @@ class CoreDataManager {
     
     func loadFavoriteFromLocal(){
         let fetchRequest = NSFetchRequest(entityName: ENT_NEWS)
-        //let fetchedResults:[NSManagedObject]
         do {
             let  fetchedResults = try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
             if let resultNews = fetchedResults {
@@ -108,11 +106,11 @@ class CoreDataManager {
                     let rights = newsElement.valueForKey(ATT_NEWS_RIGHTS) as! String
                     let imageURL60 = newsElement.valueForKey(ATT_NEWS_IMAGEURL60) as! String
                     let imageURL170 = newsElement.valueForKey(ATT_NEWS_IMAGEURL170) as! String
+                    let link = newsElement.valueForKey(ATT_NEWS_LINK) as! String
                     
-                    let element = NewsModel(id: id, artist: artist, title: title, name: name, releaseDate: releaseDate, price: price, rights: rights, imageURL60: imageURL60, imageURL170: imageURL170)
+                    let element = NewsModel(id: id, artist: artist, title: title, name: name, releaseDate: releaseDate, price: price, rights: rights, imageURL60: imageURL60, imageURL170: imageURL170,link: link)
                     self.favoriteCollection.append(element)
                 }
-                loadState = ST_LOADED
             }else {
                 print("The newsStore is empty")
             }
@@ -124,7 +122,7 @@ class CoreDataManager {
 }
 extension Array {
     mutating func removeObject<U: Equatable>(object: U) -> Bool {
-        for (idx, objectToCompare) in self.enumerate() {  //in old swift use enumerate(self)
+        for (idx, objectToCompare) in self.enumerate() {  
             if let to = objectToCompare as? U {
                 if object == to {
                     self.removeAtIndex(idx)

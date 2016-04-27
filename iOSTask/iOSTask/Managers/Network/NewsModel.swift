@@ -16,10 +16,11 @@ class NewsModel:Equatable {
     var rights:String!
     var imageURL60:String!
     var imageURL170:String!
+    var link:String!
     
 
     
-    init(id:String,artist:String,title:String,name:String,releaseDate:String,price:String,rights:String,imageURL60:String,imageURL170:String) {
+    init(id:String,artist:String!,title:String!,name:String!,releaseDate:String!,price:String!,rights:String!,imageURL60:String!,imageURL170:String!,link:String) {
         self.id = id
         self.artist = artist
         self.title = title
@@ -29,6 +30,7 @@ class NewsModel:Equatable {
         self.rights = rights
         self.imageURL60 = imageURL60
         self.imageURL170 = imageURL170
+        self.link = link
     }
 
     

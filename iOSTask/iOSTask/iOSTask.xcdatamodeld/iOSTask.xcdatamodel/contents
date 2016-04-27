@@ -5,6 +5,7 @@
         <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="imageURL60" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageURL170" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="releaseDate" optional="YES" attributeType="String" syncable="YES"/>
@@ -17,6 +18,6 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="News" positionX="19798" positionY="2331" width="128" height="178"/>
+        <element name="News" positionX="19798" positionY="2331" width="128" height="193"/>
     </elements>
 </model>

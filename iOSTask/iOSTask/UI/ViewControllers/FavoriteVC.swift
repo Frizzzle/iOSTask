@@ -21,6 +21,8 @@ class FavoriteVC: UIViewController {
         imageView.center = view.center
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
+        
+        self.title = "Favorites"
     }
     
     @IBOutlet weak var tableView: UITableView!
@@ -67,8 +69,10 @@ extension FavoriteVC : UITableViewDataSource {
         newsCell.newsFavoriteImage.tag = indexPath.row
         newsCell.newsFavoriteImage.hidden = false;
         
-        let url = NSURL(string: CoreDataManager.sharedInstance.favoriteCollection[indexPath.row].imageURL60)
+        let url = NSURL(string: CoreDataManager.sharedInstance.favoriteCollection[indexPath.row].imageURL60!)
         newsCell.newsImage.af_setImageWithURL(url!)
+        newsCell.newsImage.layer.cornerRadius = 5
+        newsCell.newsImage.clipsToBounds = true
         
         return newsCell;
     }
